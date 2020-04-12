@@ -91,6 +91,8 @@ grandChildOf(Grandchild, Grandparent) :- grandParentOf(Grandparent, Grandchild).
 ancestorOf(Ancestor, X) :- parentOf(Ancestor, X).
 ancestorOf(Ancestor, X) :- parentOf(Ancestor, Y), ancestorOf(Y, X).
 
+circle(X) :- ancestorOf(X, X).
+
 motherOf(Mother, Child) :- parentOf(Mother, Child), female(Mother).
 fatherOf(Father, Child) :- parentOf(Father, Child), male(Father).
 daughterOf(Parent, Daughter) :- childOf(Daughter, Parent), female(Daughter).
