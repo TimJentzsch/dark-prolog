@@ -89,7 +89,7 @@ grandFatherOf(Grandfather, Grandchild) :- grandParentOf(Grandfather, Grandchild)
 grandChildOf(Grandchild, Grandparent) :- grandParentOf(Grandparent, Grandchild).
 
 ancestorOf(Ancestor, X) :- parentOf(Ancestor, X).
-ancestorOf(Ancestor, X) :- parentOf(Ancestor, Y), ancestorOf(Y, X).
+ancestorOf(Ancestor, X) :- ancestorOf(Y, X), parentOf(Ancestor, Y).
 
 circle(X) :- ancestorOf(X, X).
 
