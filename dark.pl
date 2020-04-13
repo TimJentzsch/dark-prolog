@@ -60,20 +60,15 @@ female(elisabeth).
 female(franziska).
 female(greta).
 
-inLove(hannah, ulrich).
-inLove(martha, jonas).
-inLove(martha, bartosz).
-inLove(franziska, magnus).
-inLove(agnes, doris).
-inLove(claudia, tronte).
-
-inLove(X, Y) :- parentOf(X, Z), parentOf(Y, Z), X \== Y.
-inLove(X, Y) :- inLove(Y, X).
+affair(hannah, ulrich).
+affair(martha, jonas).
+affair(martha, bartosz).
+affair(franziska, magnus).
+affair(agnes, doris).
+affair(claudia, tronte).
 
 parentOf(mikkel, jonas).
 parentOf(hannah, jonas).
-
-parentOf(ines, mikkel).
 
 parentOf(sebastian, hannah).
 
@@ -117,9 +112,6 @@ parentOf(bernd, helge).
 parentOf(unknown1, noah).
 parentOf(unknown1, agnes).
 
-parentOf(unknown2, tannhaus).
-parentOf(unknown2, charlotte).
-
 /** Rules */
 childOf(Child, Parent) :- parentOf(Parent, Child).
 grandParentOf(Grandparent, Grandchild) :- parentOf(Grandparent, Parent), parentOf(Parent, Grandchild).
@@ -144,3 +136,9 @@ brotherOf(Brother, Sibling) :- siblingOf(Brother, Sibling), male(Brother).
 auntOf(Aunt, X) :- parentOf(Parent, X), sisterOf(Aunt, Parent).
 uncleOf(Uncle, X) :- parentOf(Parent, X), brotherOf(Uncle, Parent).
 cousinOf(Cousin, X) :- auntOf(Aunt, X), childOf(Cousin, Aunt); uncleOf(Uncle, X), childOf(Cousin, Uncle).
+
+married(X, Y) :- parentOf(X, Z), parentOf(Y, Z), X \== Y.
+inLove(X, Y) :- affair(X, Y); affair(Y, X); married(X, Y).
+
+cheatingOn(Cheater, X) :- married(Cheater, X), inLove(Cheater, Y), X \== Y.
+cheating(Cheater) :- cheatingOn(Cheater, _).
