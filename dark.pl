@@ -149,3 +149,5 @@ inLove(X, Y) :- affair(X, Y); affair(Y, X); married(X, Y).
 
 cheatingOn(Cheater, X) :- married(Cheater, X), inLove(Cheater, Y), X \== Y.
 cheating(Cheater) :- cheatingOn(Cheater, _).
+
+incest(X) :- inLove(X, Y), relatedTo(X, Y).
