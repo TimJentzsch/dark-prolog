@@ -60,6 +60,16 @@ female(elisabeth).
 female(franziska).
 female(greta).
 
+inLove(hannah, ulrich).
+inLove(martha, jonas).
+inLove(martha, bartosz).
+inLove(franziska, magnus).
+inLove(agnes, doris).
+inLove(claudia, tronte).
+
+inLove(X, Y) :- parentOf(X, Z), parentOf(Y, Z), X \== Y.
+inLove(X, Y) :- inLove(Y, X).
+
 parentOf(mikkel, jonas).
 parentOf(hannah, jonas).
 
