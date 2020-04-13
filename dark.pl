@@ -1,6 +1,35 @@
 /** Predicates */
+nameOf("Jonas Kahnwald", jonas).
+nameOf("Michael Kahnwald", mikkel).
+nameOf("Ines Kahnwald", ines).
+nameOf("Daniel Kahnwald", daniel).
+nameOf("Sebastian Krüger", sebastian).
+nameOf("Hannah Kahnwald", hannah).
+nameOf("Noah", noah).
+nameOf("Agnes Nielsen", agnes).
+nameOf("Jana Nielsen", jana).
+nameOf("Tronte Nielsen", tronte).
+nameOf("Katharina Nielsen", katharina).
+nameOf("Ulrich Nielsen", ulrich).
+nameOf("Martha Nielsen", martha).
+nameOf("Magnus Nielsen", magnus).
+nameOf("Mads Nielsen", mads).
+nameOf("Doris Tiedemann", drois).
+nameOf("Egon Tiedemann", egon).
+nameOf("Claudia Tiedemann", claudia).
+nameOf("Aleksander Tiedemann", aleksander).
+nameOf("Regina Tiedemann", regina).
+nameOf("Bartosz Tiedemann", bartosz).
+nameOf("H.G. Tannhaus", tannhaus).
+nameOf("Charlotte Doppler", charlotte).
+nameOf("Greta Doppler", greta).
+nameOf("Elisabeth Doppler", charlotte).
+nameOf("Bernd Doppler", bernd).
+nameOf("Helge Doppler", helge).
+nameOf("Peter Doppler", peter).
+nameOf("Franziska Doppler", franziska).
+
 male(jonas).
-male(michael).
 male(daniel).
 male(sebastian).
 male(ulrich).
