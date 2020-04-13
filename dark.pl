@@ -122,6 +122,13 @@ grandChildOf(Grandchild, Grandparent) :- grandParentOf(Grandparent, Grandchild).
 ancestorOf(Ancestor, X) :- parentOf(Ancestor, X).
 ancestorOf(Ancestor, X) :- ancestorOf(Y, X), parentOf(Ancestor, Y).
 
+predecessorOf(Predecessor, X) :- childOf(Predecessor, X).
+predecessorOf(Predecessor, X) :- predecessorOf(Y, X), childOf(Predecessor, Y).
+
+relatedTo(X, Y) :- ancestorOf(X, Y); predecessorOf(X, Y).
+relatedTo(X, Y) :- relatedTo(Z, Y), ancestorOf(X, Z).
+relatedTo(X, Y) :- relatedTo(Z, Y), predecessorOf(X, Z).
+
 circle(X) :- ancestorOf(X, X).
 
 motherOf(Mother, Child) :- parentOf(Mother, Child), female(Mother).
